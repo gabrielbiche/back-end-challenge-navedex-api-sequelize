@@ -17,7 +17,7 @@ Para a criação do projeto foi utilizado o padrão arquitetural de software MVC
 1. Crie um banco de dados
 2. Defina seus dados de acesso ao banco de dados em: /src/database/config.json
 3. Renomeie o arquivo da raiz do projeto chamado .env.example para .env e neste defina uma senha secreta para a chave CHAVE_JWT
-4. Inicie as dependências do projeto com o seguinte comando: npm init
+4. Inicie as dependências do projeto com o seguinte comando: npm install
 5. Crie as tabelas do banco de dados executando as migrações com o seguinte comando: npx sequelize-cli db:migrate
 6. Execute o seguinte comando para iniciar o servidor: npm run dev 
 
