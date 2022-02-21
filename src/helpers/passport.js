@@ -22,10 +22,6 @@ passport.use(
         if (!user) throw new Unauthorized('There is no user registered with this email.')
         const validPasswordBcrypt = await bcrypt.compare(password, user.password)
         if (!validPasswordBcrypt) throw new Unauthorized()
-        /* Caso utilize seeders descomente a validação validPasswordBd e sua verificação,
-          vide seção Observações na documentação para mais informações */
-        // const validPasswordBd = password === user.password ? true : false
-        // if (!validPasswordBd) throw new Unauthorized('Invalid email or password.')
         done(null, user)
       } catch (error) {
         done(error)

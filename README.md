@@ -15,17 +15,12 @@ Para a criação do projeto foi utilizado o padrão arquitetural de software MVC
 
 ## Siga os passos abaixo para executar o projeto:
 1. Crie um banco de dados
-2. Defina seus dados de acesso ao banco de dados em: /src/database/config.json
-3. Renomeie o arquivo da raiz do projeto chamado .env.example para .env e neste defina uma senha secreta para a chave CHAVE_JWT
+2. Defina seus dados de acesso ao banco de dados em: /src/database/config/config.json
+3. Renomeie o arquivo da raiz do projeto chamado .env.example para .env e neste defina uma senha secreta para ACCESS_SECRET
 4. Inicie as dependências do projeto com o seguinte comando: npm install
 5. Crie as tabelas do banco de dados executando as migrações com o seguinte comando: npx sequelize-cli db:migrate
-6. Execute o seguinte comando para iniciar o servidor: npm run dev 
-
-## Seedes
-Foi disponibilizado junto do projeto seeders para popular o banco de dados da API, caso tenha interesse de utilizar estes dados, vide observações abaixo e após seguir as orientações execute o seguinte comando: npx sequelize-cli db:seed:all
-### Observações seeders:
-Foi adicionado no documento passport.js, na instância da estratégia local de autenticação a validação chamada validPasswordBd, tal validação foi adicionada para ser possível a utilização das seeders fornecidas junto da API, caso utilize as seeders descomente a validação e verificação de que faz parte e comente a validação chamada validPasswordBcrypt e sua verificação, no documento acima mencionado.
-Esta validação foi adicionada por dois motivos, o primeiro é que ao gerar as seeders a senha dos usuários não é criptografada pelo bcrypt(pois é diretamente persistida no banco de dados), e por este motivo logo falhará na validação(compare) com sua utilização e o segundo motivo é devido a relação entre as entidades Users, Navers e Projetos, sem os usuários não seria possível gerar as seeders das entidades relacionadas a este.
+6. OPICIONAL) Caso queira você pode popular o banco de dados com as seeds fornecidas, para isto execute o seguinte comando: npx sequelize-cli db:seed:all
+7. Execute o seguinte comando para iniciar o servidor: npm run dev 
 
 ## Estrutura de diretórios:
 ```
@@ -34,7 +29,7 @@ Esta validação foi adicionada por dois motivos, o primeiro é que ao gerar as 
 |   ├── /database
 |   |   ├── /config
 |   |   ├── /migrations
-|   |   ├── /seeds
+|   |   ├── /seeders
 |   ├── /helpers
 |   ├── /middlewares
 |   ├── /models
