@@ -1,7 +1,7 @@
 'use strict'
 
-module.exports = {
-  async up(queryInterface, Sequelize) {
+export default {
+  up: async (queryInterface, Sequelize) => {
     return queryInterface.createTable('NaversProjects', {
       naver_id: {
         type: Sequelize.INTEGER,
@@ -28,7 +28,7 @@ module.exports = {
     })
   },
 
-  async down(queryInterface, Sequelize) {
+  down: async (queryInterface, Sequelize) => {
     return queryInterface.dropTable('NaversProjects')
   }
 }
