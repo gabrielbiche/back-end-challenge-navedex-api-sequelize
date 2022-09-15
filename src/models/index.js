@@ -1,11 +1,12 @@
 'use strict'
 
-const fs = require('fs')
-const path = require('path')
-const Sequelize = require('sequelize')
+import fs from 'fs'
+import path from 'path'
+import Sequelize from 'sequelize'
+import enVariables from '../database/config/config.js'
 const basename = path.basename(__filename)
 const env = process.env.NODE_ENV || 'development'
-const config = require(__dirname + '/../database/config/config.json')[env]
+const config = enVariables[env]
 const db = {}
 
 let sequelize
@@ -43,4 +44,4 @@ Object.keys(db).forEach(modelName => {
 db.sequelize = sequelize
 db.Sequelize = Sequelize
 
-module.exports = db
+export default db

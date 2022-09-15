@@ -1,4 +1,4 @@
-require('dotenv/config.js');
+require('dotenv/config.js')
 
 module.exports = {
   development: {
@@ -7,10 +7,10 @@ module.exports = {
     database: process.env.DB_NAME,
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
-    dialect: mysql,
+    dialect: 'mysql',
     dialectOptions: {
-      bigNumberStrings: true,
-    },
+      bigNumberStrings: true
+    }
   },
   test: {
     username: '',
@@ -20,8 +20,8 @@ module.exports = {
     port: '',
     dialect: '',
     dialectOptions: {
-      bigNumberStrings: true,
-    },
+      bigNumberStrings: true
+    }
   },
   production: {
     username: '',
@@ -31,8 +31,8 @@ module.exports = {
     port: '',
     dialect: '',
     dialectOptions: {
-      bigNumberStrings: true,
-    },
-  },
-};
+      bigNumberStrings: true
+    }
+  }
+}
 
