@@ -9,7 +9,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon src/index.js --exec babel-node",
     "build": "rm -rf build && mkdir build && babel src -s -d build",
-    "start": "node build/index.js"
+    "start": "node build/index.js",
+    "migrate": "npx sequelize-cli db:migrate",
+    "migrate:undo": "npx sequelize-cli db:migrate:undo:all",
+    "seed": "npx sequelize-cli db:seed:all",
+    "seed:undo": "npx sequelize-cli db:seed:undo:all"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
