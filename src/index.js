@@ -1,9 +1,9 @@
-const express = require('express')
+import express from 'express'
 
-require('dotenv').config()
-require('./helpers/passport')
+import 'dotenv/config'
+import './helpers/passport'
 
-const routes = require('./routes')
+import routes from './routes'
 
 const app = express()
 const port = 3000
