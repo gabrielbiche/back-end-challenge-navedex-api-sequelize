@@ -1,12 +1,12 @@
-require('dotenv/config.js')
+const env = require('../../config')
 
 module.exports = {
   development: {
-    username: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_DATABASE,
-    host: process.env.DB_HOST,
-    port: process.env.DB_PORT,
+    username: env.DB_USER,
+    password: env.DB_PASSWORD,
+    database: env.DB_DATABASE,
+    host: env.DB_HOST,
+    port: env.DB_PORT,
     dialect: 'mysql',
     dialectOptions: {
       bigNumberStrings: true
@@ -35,4 +35,3 @@ module.exports = {
     }
   }
 }
-
