@@ -1,4 +1,4 @@
-class BadRequest extends Error {
+export class BadRequest extends Error {
   constructor(message) {
     super(message)
     this.name = 'BadRequest'
@@ -6,7 +6,7 @@ class BadRequest extends Error {
     this.errorCode = 400
   }
 }
-class Unauthorized extends Error {
+export class Unauthorized extends Error {
   constructor(message = 'Incorrect username or password') {
     super(message)
     this.name = 'Unauthorized'
@@ -14,17 +14,11 @@ class Unauthorized extends Error {
     this.errorCode = 401
   }
 }
-class NotFound extends Error {
+export class NotFound extends Error {
   constructor(message = 'The requested resource could not be found') {
     super(message)
     this.name = 'NotFound'
     this.statusCode = 404
     this.errorCode = 404
   }
-}
-
-module.exports = {
-  BadRequest: BadRequest,
-  Unauthorized: Unauthorized,
-  NotFound: NotFound
 }

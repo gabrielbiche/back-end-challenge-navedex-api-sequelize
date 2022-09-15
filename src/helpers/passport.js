@@ -1,11 +1,11 @@
-const passport = require('passport')
-const LocalStrategy = require('passport-local').Strategy
-const BearerStrategy = require('passport-http-bearer').Strategy
-const bcrypt = require('bcrypt')
-const jwt = require('jsonwebtoken')
+import passport from 'passport'
+import LocalStrategy from 'passport-local'
+import BearerStrategy from 'passport-http-bearer'
+import bcrypt from 'bcrypt'
+import jwt from 'jsonwebtoken'
 
-const { Unauthorized } = require('../helpers/errors')
-const db = require('../models')
+import { Unauthorized } from '../helpers/errors'
+import db from '../models'
 
 const Users = db.Users
 
