@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "description": "Navedex API Project, technical test for vacancy.",
   "main": "src/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/index.js"
-  },
   "author": "Gabriel da Silva Biche",
   "license": "ISC",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/index.js --exec babel-node",
+    "build": "rm -rf build && mkdir build && babel src -s -d build",
+    "start": "node build/index.js"
+  },
   "dependencies": {
     "bcrypt": "^5.0.1",
     "dotenv": "^15.0.0",
