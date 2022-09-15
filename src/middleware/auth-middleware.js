@@ -1,7 +1,7 @@
-const passport = require('passport')
+import passport from 'passport'
 
-module.exports = {
-  local(req, res, next) {
+export default {
+  local: (req, res, next) => {
     passport.authenticate('local', { session: false }, (error, user, info) => {
       if (error) res.status(401).json({ Message: error.message })
       if (!user) res.status(401).json({ Message: error.message })
@@ -10,7 +10,7 @@ module.exports = {
     })(req, res, next)
   },
 
-  bearer(req, res, next) {
+  bearer: (req, res, next) => {
     passport.authenticate('bearer', { session: false }, (error, user, info) => {
       if (error) res.status(500).json({ Message: error.message })
       if (!user) res.status(401).json({ Message: error.message })
