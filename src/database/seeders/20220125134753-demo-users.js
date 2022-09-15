@@ -1,8 +1,8 @@
 'use strict'
-const bcrypt = require('bcrypt')
+import bcrypt from 'bcrypt'
 
-module.exports = {
-  async up(queryInterface, Sequelize) {
+export default {
+  up: async (queryInterface, Sequelize) => {
     return queryInterface.bulkInsert(
       'Users',
       [
@@ -23,7 +23,7 @@ module.exports = {
     )
   },
 
-  async down(queryInterface, Sequelize) {
+  down: async (queryInterface, Sequelize) => {
     return queryInterface.bulkDelete('Users', null, {})
   }
 }
