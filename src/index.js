@@ -6,7 +6,7 @@ import './helpers/passport'
 import routes from './routes'
 
 const app = express()
-const port = 3000
+const port = Number(process.env.PORT)
 
 app.use(express.json())
 app.use(routes)
