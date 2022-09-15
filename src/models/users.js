@@ -1,7 +1,7 @@
 'use strict'
-const bcrypt = require('bcrypt')
-const { Model } = require('sequelize')
-module.exports = (sequelize, DataTypes) => {
+import { hashSync } from 'bcrypt'
+import { Model } from 'sequelize'
+export default (sequelize, DataTypes) => {
   class Users extends Model {
     static associate(models) {
       Users.hasMany(models.Navers, { foreignKey: 'user_id' })
@@ -36,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
       hooks: {
         beforeCreate: user => {
           const saltRounds = 12
-          user.password = bcrypt.hashSync(user.password, saltRounds)
+          user.password = hashSync(user.password, saltRounds)
         }
       }
     }

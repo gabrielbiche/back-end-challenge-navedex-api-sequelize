@@ -1,6 +1,6 @@
 'use strict'
-const { Model } = require('sequelize')
-module.exports = (sequelize, DataTypes) => {
+import { Model } from 'sequelize'
+export default (sequelize, DataTypes) => {
   class Navers extends Model {
     static associate(models) {
       Navers.belongsTo(models.Users, { foreignKey: 'user_id' })
