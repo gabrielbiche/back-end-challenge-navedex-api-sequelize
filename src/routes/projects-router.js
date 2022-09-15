@@ -1,7 +1,7 @@
-const { Router } = require('express')
+import { Router } from 'express'
 
-const { projectsController } = require('../controllers')
-const authMiddleware = require('../middleware/auth-middleware')
+import projectsController from '../controllers/projects-controller'
+import authMiddleware from '../middleware/auth-middleware'
 
 const router = new Router()
 
@@ -9,6 +9,6 @@ router.get('/users/:user_id/projects', authMiddleware.bearer, projectsController
 router.get('/users/:user_id/projects/:project_id', authMiddleware.bearer, projectsController.show)
 router.post('/users/:user_id/projects', authMiddleware.bearer, projectsController.store)
 router.put('/users/:user_id/projects/:project_id', authMiddleware.bearer, projectsController.update)
-router.delete('/users/:user_id/projects/:project_id', authMiddleware.bearer, projectsController.delete)
+router.delete('/users/:user_id/projects/:project_id', authMiddleware.bearer, projectsController.destroy)
 
-module.exports = router
+export default router

@@ -1,8 +1,8 @@
-const { Router } = require('express')
+import { Router } from 'express'
 
-const usersRouter = require('./users-router')
-const naversRouter = require('./navers-router')
-const projectsRouter = require('./projects-router')
+import usersRouter from './users-router'
+import naversRouter from './navers-router'
+import projectsRouter from './projects-router'
 
 const app = new Router()
 
@@ -10,4 +10,4 @@ app.use(usersRouter)
 app.use(naversRouter)
 app.use(projectsRouter)
 
-module.exports = app
+export default app
