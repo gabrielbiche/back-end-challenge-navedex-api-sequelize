@@ -1,5 +1,5 @@
 export class BadRequest extends Error {
-  constructor(message) {
+  constructor(message = BadRequest) {
     super(message)
     this.name = 'BadRequest'
     this.statusCode = 400
@@ -7,7 +7,7 @@ export class BadRequest extends Error {
   }
 }
 export class Unauthorized extends Error {
-  constructor(message = 'Incorrect username or password') {
+  constructor(message = 'Unauthorized') {
     super(message)
     this.name = 'Unauthorized'
     this.statusCode = 401
