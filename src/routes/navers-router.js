@@ -1,14 +1,15 @@
 import { Router } from 'express'
 
 import naversController from '../controllers/navers-controller'
-import authMiddleware from '../middleware/auth-middleware'
+import { authenticationMiddleware } from '../middleware'
 
-const router = new Router()
+const routes = Router()
 
-router.get('/users/:user_id/navers', authMiddleware.bearer, naversController.index)
-router.get('/users/:user_id/navers/:naver_id', authMiddleware.bearer, naversController.show)
-router.post('/users/:user_id/navers', authMiddleware.bearer, naversController.store)
-router.put('/users/:user_id/navers/:naver_id', authMiddleware.bearer, naversController.update)
-router.delete('/users/:user_id/navers/:naver_id', authMiddleware.bearer, naversController.destroy)
+routes.use(authenticationMiddleware)
+routes.get('/users/:user_id/navers', naversController.index)
+routes.get('/users/:user_id/navers/:naver_id', naversController.show)
+routes.post('/users/:user_id/navers', naversController.store)
+routes.put('/users/:user_id/navers/:naver_id', naversController.update)
+routes.delete('/users/:user_id/navers/:naver_id', naversController.destroy)
 
-export default router
+export default routes

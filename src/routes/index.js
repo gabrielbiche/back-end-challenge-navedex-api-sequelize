@@ -1,13 +1,13 @@
 import { Router } from 'express'
 
-import usersRouter from './users-router'
-import naversRouter from './navers-router'
-import projectsRouter from './projects-router'
+import users from './users-router'
+import navers from './navers-router'
+import projects from './projects-router'
 
-const app = new Router()
+const router = Router()
 
-app.use(usersRouter)
-app.use(naversRouter)
-app.use(projectsRouter)
+router.use(users)
+router.use(navers)
+router.use(projects)
 
-export default app
+export default router
