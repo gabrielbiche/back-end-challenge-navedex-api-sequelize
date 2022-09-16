@@ -1,9 +1,10 @@
 {
 	"info": {
 		"_postman_id": "6758a81e-766f-4fc4-b377-31c2668dcb66",
-		"name": "Navedex API",
+		"name": "NavedexAPI",
 		"description": "## Documentação para uso da API\n\n## Autenticação\nAo criar um usuário e efetuar login, você recebera por meio do cabeçalho de requisição HTTP Authorization o token JWT. Adicione o token a este mesmo cabeçalho de suas solicitações seguintes para obter acesso.\n\n## Códigos de status implementados \n**400 - Bad Request**\nDados enviados incorretamente ou fora do padrão. \n\n**401 - Anauthorized**\nSem autorização para acessar o recurso desejado. \n\n**404 - Not Found**\nRecurso solicitado não encontrado. \n\n**200 - Ok**\nRecurso solicitado com sucesso. \n\n**201 - Created**\nRecurso de criação de sucesso. \n\n**204 - No content**\nSucesso ao solicitar recurso, mas sem retorno de conteúdo, os cabeçalhos podem ser úteis.",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16658273"
 	},
 	"item": [
 		{
@@ -16,7 +17,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"gabriel@domain.com\",\n    \"password\": \"12345678\"\n}",
+							"raw": "{\n    \"email\": \"beltrano@domain.com\",\n    \"password\": \"12345678\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -110,7 +111,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\": \"gabriel@domain.com\",\n    \"password\": \"12345678\"\n}",
+							"raw": "{\n    \"email\": \"beltrano@domain.com\",\n    \"password\": \"12345678\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
