@@ -343,16 +343,6 @@
 				{
 					"name": "Show - Rota para detalhar informações de um único naver através de seu identificador",
 					"request": {
-						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjQzODg5MzQzLCJleHAiOjE2NDM4OTg5NDN9.sf9iG_vThAdv8kQ-ZjOB9WPW2Uk32-ehQtrHCD9VWwQ",
-									"type": "string"
-								}
-							]
-						},
 						"method": "GET",
 						"header": [],
 						"url": {
