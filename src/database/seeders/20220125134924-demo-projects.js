@@ -7,21 +7,15 @@ export default {
       [
         {
           user_id: 1,
-          name: 'Projeto muito bom',
-          createdAt: new Date(),
-          updatedAt: new Date()
+          name: 'Projeto muito bom'
         },
         {
           user_id: 1,
-          name: 'Projeto realmente bom',
-          createdAt: new Date(),
-          updatedAt: new Date()
+          name: 'Projeto realmente bom'
         },
         {
           name: 'Projeto bom',
-          user_id: 1,
-          createdAt: new Date(),
-          updatedAt: new Date()
+          user_id: 1
         }
       ],
       {}

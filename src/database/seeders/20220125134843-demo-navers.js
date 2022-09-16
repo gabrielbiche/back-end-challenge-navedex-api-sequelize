@@ -10,18 +10,14 @@ export default {
           name: 'Fulano',
           birthdate: '1999-05-15',
           admission_date: '2020-06-12',
-          job_role: 'Desenvolvedor',
-          createdAt: new Date(),
-          updatedAt: new Date()
+          job_role: 'Desenvolvedor'
         },
         {
           user_id: 1,
           name: 'Ciclano',
           birthdate: '1992-10-28',
           admission_date: '2018-06-12',
-          job_role: 'Desenvolvedor',
-          createdAt: new Date(),
-          updatedAt: new Date()
+          job_role: 'Desenvolvedor'
         }
       ],
       {}

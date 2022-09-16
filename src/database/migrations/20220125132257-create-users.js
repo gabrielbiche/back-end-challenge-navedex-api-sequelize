@@ -17,10 +17,14 @@ export default {
         type: Sequelize.STRING(255)
       },
       createdAt: {
+        defaultValue: Sequelize.literal('CURRENT_TIMESTAMP'),
         allowNull: false,
         type: Sequelize.DATE
       },
       updatedAt: {
+        defaultValue: Sequelize.literal(
+          'CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'
+        ),
         allowNull: false,
         type: Sequelize.DATE
       }

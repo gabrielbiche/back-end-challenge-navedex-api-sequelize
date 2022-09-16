@@ -7,21 +7,15 @@ export default {
       [
         {
           naver_id: 1,
-          project_id: 1,
-          createdAt: new Date(),
-          updatedAt: new Date()
+          project_id: 1
         },
         {
           naver_id: 1,
-          project_id: 2,
-          createdAt: new Date(),
-          updatedAt: new Date()
+          project_id: 2
         },
         {
           naver_id: 1,
-          project_id: 3,
-          createdAt: new Date(),
-          updatedAt: new Date()
+          project_id: 3
         }
       ],
       {}
