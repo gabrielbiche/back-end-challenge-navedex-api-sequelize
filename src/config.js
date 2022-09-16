@@ -7,6 +7,7 @@ dotenv.config({
 
 export const PORT = process.env.PORT
 export const ACCESS_SECRET = process.env.ACCESS_SECRET
+export const ACCESS_EXPIRES = process.env.ACCESS_EXPIRES
 export const DB_USER = process.env.DB_USER
 export const DB_PASSWORD = process.env.DB_PASSWORD
 export const DB_HOST = process.env.DB_HOST
