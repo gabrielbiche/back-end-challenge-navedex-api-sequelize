@@ -1,5 +1,4 @@
 'use strict'
-import { hashSync } from 'bcrypt'
 import { Model } from 'sequelize'
 export default (sequelize, DataTypes) => {
   class Users extends Model {
@@ -26,19 +25,16 @@ export default (sequelize, DataTypes) => {
         validate: {
           notEmpty: { msg: 'Please enter a password' },
           notNull: { msg: 'Please enter a password' },
-          len: { args: [8, 256], msg: 'The password must contain at least 8 characters' }
+          len: {
+            args: [8, 256],
+            msg: 'The password must contain at least 8 characters'
+          }
         }
       }
     },
     {
       sequelize,
       modelName: 'Users',
-      hooks: {
-        beforeCreate: user => {
-          const saltRounds = 12
-          user.password = hashSync(user.password, saltRounds)
-        }
-      }
     }
   )
   return Users
