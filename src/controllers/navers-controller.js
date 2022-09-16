@@ -33,7 +33,9 @@ export const show = async (req, res) => {
       through: { attributes: [] }
     }
   })
-  
+
+  if (!naverAndProjects) throw new NotFound('Naver not found')
+
   return res.status(200).json(naverAndProjects)
 }
 
@@ -45,9 +47,8 @@ export const store = async (req, res) => {
     const project = await Projects.findAll({
       where: { id: projects }
     })
-    if (!project || project.length < projects.length) {
+    if (!project || project.length < projects.length)
       throw new NotFound('Project not found')
-    }
   }
 
   const naver = await Navers.create({
@@ -82,18 +83,18 @@ export const update = async (req, res) => {
     where: { id: naver_id, user_id: user_id }
   })
 
-  if (!naver) {
-    throw new Unauthorized(`User id ${user_id} does not have naver id ${naver_id}`)
-  }
+  if (!naver)
+    throw new Unauthorized(
+      `User id ${user_id} does not have naver id ${naver_id}`
+    )
 
   if (projects) {
     const project = await Projects.findAll({
       where: { id: projects }
     })
 
-    if (!project || project.length < projects.length) {
+    if (!project || project.length < projects.length)
       throw new NotFound('Project not found')
-    } 
   }
 
   await Navers.update(
@@ -111,6 +112,7 @@ export const update = async (req, res) => {
       through: { attributes: [] }
     }
   })
+
   return res.status(200).json(updatedNaverAndProjects)
 }
 
@@ -121,12 +123,13 @@ export const destroy = async (req, res) => {
     where: { id: naver_id, user_id: user_id }
   })
 
-  if (!naver) {
-    throw new Unauthorized(`User id ${user_id} does not have naver id ${naver_id}`)
-  }
+  if (!naver)
+    throw new Unauthorized(
+      `User id ${user_id} does not have naver id ${naver_id}`
+    )
 
   await Navers.destroy({ where: { id: naver.id } })
-  
+
   return res.status(204).end()
 }
 
