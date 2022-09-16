@@ -22,7 +22,7 @@ Para a criação do projeto foi utilizado o padrão arquitetural de software MVC
 
 1. Crie um banco de dados
 
-2. Renomeie o arquivo da raiz do projeto chamado .env.example para .env e neste defina seus dados de acesso ao banco de dados, a porta para o servidor rodar e o payload em access_secret
+2. Renomeie o arquivo da raiz do projeto chamado .env.example para .env e neste defina seus dados de acesso ao banco de dados, a porta para o servidor rodar, a chave para o token JWT em access_secret e o tempo para sua expiração em access_expires
 
 3. Inicie as dependências do projeto
 ```
